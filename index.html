@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dashboard</title>
+<script>
+  var t = localStorage.getItem('dashboard-theme-v1');
+  if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+</script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" href="icons/icon-192.png">
+<meta name="theme-color" content="#F2F2F7">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Dashboard">
+</head>
+<body>
+
+<main id="views">
+  <section id="view-today" class="view" data-view="today"></section>
+  <section id="view-habits" class="view" data-view="habits"></section>
+  <section id="view-gym" class="view" data-view="gym"></section>
+  <section id="view-progress" class="view" data-view="progress"></section>
+</main>
+
+<div id="sheet-backdrop" class="sheet-backdrop" hidden></div>
+<div id="sheet-root"></div>
+
+<nav class="tabbar">
+  <button class="tab" data-tab="today" aria-label="Hoy">
+    <svg viewBox="0 0 24 24" class="tab-icon"><path d="M12 3l9 8h-3v9h-5v-6H11v6H6v-9H3z"/></svg>
+    <span>Hoy</span>
+  </button>
+  <button class="tab" data-tab="habits" aria-label="Hábitos">
+    <svg viewBox="0 0 24 24" class="tab-icon"><path d="M9 16.2l-3.5-3.5L4 14.2 9 19.2 20 8.2l-1.5-1.5z"/></svg>
+    <span>Hábitos</span>
+  </button>
+  <button class="tab" data-tab="gym" aria-label="Gym">
+    <svg viewBox="0 0 24 24" class="tab-icon"><path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57l1.43 1.43L2 13.43 3.43 15l1.43-1.43L6.29 15l-2.14 2.14 1.43 1.43L7 16.86l1.43 1.43-1.43 1.43 1.43 1.43 1.43-1.43 1.43 1.43 2.14-2.14 1.43 1.43L17 18.86l-1.43-1.43L17 16l7 7 1.43-1.43z"/></svg>
+    <span>Gym</span>
+  </button>
+  <button class="tab" data-tab="progress" aria-label="Progreso">
+    <svg viewBox="0 0 24 24" class="tab-icon"><path d="M3 3v18h18v-2H5V3zm4 14h2v-6H7zm4 0h2V7h-2zm4 0h2v-4h-2z"/></svg>
+    <span>Progreso</span>
+  </button>
+</nav>
+
+<script src="js/store.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/today.js"></script>
+<script src="js/habits.js"></script>
+<script src="js/gym.js"></script>
+<script src="js/progress.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
